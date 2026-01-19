@@ -13,6 +13,11 @@ from prime_rl.utils.utils import rgetattr, rsetattr
 class ServerConfig(BaseConfig):
     """Configures the inference server."""
 
+    backend: Annotated[
+        Literal["vllm", "sglang"],
+        Field(description="Inference backend to use (vllm or sglang).")
+    ] = "vllm"
+
     host: Annotated[str | None, Field(description="The host to bind to.")] = None
     port: Annotated[int, Field(description="The port to bind to.")] = 8000
 

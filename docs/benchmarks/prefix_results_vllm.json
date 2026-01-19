@@ -1,0 +1,1 @@
+{"backend": "vllm", "output_tokens_per_sec": 3686.965438338528, "avg_latency_ms": 2205.5874639437993, "avg_ttft_ms": 46.2010628218005}
