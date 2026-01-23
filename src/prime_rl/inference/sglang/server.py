@@ -898,7 +898,7 @@ def _start_with_subprocess(config: InferenceConfig, server_args: dict):
             self.async_client = httpx.AsyncClient(base_url=base_url, timeout=300, limits=limits)
         
         def update_weights_from_disk(self, path: str) -> bool:
-            resp = self.client.post("/update_weights", json={"weight_dir": path})
+            resp = self.client.post("/update_weights_from_disk", json={"model_path": path})
             return resp.status_code == 200
         
         async def proxy_chat_completion(self, body: dict) -> dict:
