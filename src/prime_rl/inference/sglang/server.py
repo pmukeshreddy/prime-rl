@@ -844,6 +844,7 @@ def _start_with_subprocess(config: InferenceConfig, server_args: dict):
         sys.executable, "-m", "sglang.launch_server",
         "--model-path", server_args["model_path"],
         "--port", str(sglang_port),
+        "--disable-cuda-graph",  # Required when nvcc not available
     ]
     
     # Add parallelism - prefer TP over DP for fair comparison with vLLM
