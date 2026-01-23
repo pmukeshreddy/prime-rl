@@ -21,7 +21,6 @@ dependencies = [
     "transformers>=4.56.0",
     "uvloop>=0.21.0",
     "vllm==0.12.0",
-    "sglang[all]>=0.4.4",
     "wandb>=0.20.1",
     "lovely-tensors>=0.1.18",
     "rich>=14.0.0",
@@ -54,6 +53,9 @@ eval = "prime_rl.eval.eval:main"
 synthesize = "prime_rl.synthesize.synthesize:main"
 
 [project.optional-dependencies]
+sglang = [
+    "sglang[all]>=0.4.4",
+]
 flash-attn = [
     "flash-attn @ https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.6.8/flash_attn-2.8.3+cu128torch2.9-cp312-cp312-linux_x86_64.whl",
 ]
